@@ -259,9 +259,62 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        网页搜索
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
     <a href="./" title="网页搜索" class="md-nav__link md-nav__link--active">
       网页搜索
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    参数
+  </a>
+  
+    <nav class="md-nav" aria-label="参数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    实例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    返回值
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -372,6 +425,43 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    参数
+  </a>
+  
+    <nav class="md-nav" aria-label="参数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    实例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    返回值
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -387,7 +477,137 @@
                 
                 
                 <h1 id="_1">网页搜索</h1>
-<p>此页正在编写中……</p>
+<div class="codehilite"><pre><span></span><code><span class="n">BaiduSpider</span><span class="o">.</span><span class="n">search_web</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">BaiduSpider</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">pn</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span>
+</code></pre></div>
+
+
+<h3 id="_2">参数</h3>
+<ul>
+<li>
+<p>self: BaiduSpider，即必须实例化<code>BaiduSpider</code>对象后才可调用。</p>
+</li>
+<li>
+<p>query: str，要查询网页搜索的字符串</p>
+</li>
+<li>
+<p>pn: int，要爬取的页码，默认为1，为可选参数</p>
+</li>
+</ul>
+<h4 id="_3">实例</h4>
+<ul>
+<li>基本的调用</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="c1"># 导入BaiduSpider</span>
+<span class="kn">from</span> <span class="nn">main</span> <span class="kn">import</span> <span class="n">BaiduSpider</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+
+<span class="c1"># 实例化BaiduSpider</span>
+<span class="n">spider</span> <span class="o">=</span> <span class="n">BaiduSpider</span><span class="p">()</span>
+
+<span class="c1"># 搜索网页</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">spider</span><span class="o">.</span><span class="n">search_web</span><span class="p">(</span><span class="n">word</span><span class="o">=</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;要搜索的关键词：&#39;</span><span class="p">)))</span>
+</code></pre></div>
+
+
+<ul>
+<li>指定页码</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">main</span> <span class="kn">import</span> <span class="n">BaiduSpider</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+
+<span class="n">spider</span> <span class="o">=</span> <span class="n">BaiduSpider</span><span class="p">()</span>
+
+<span class="c1"># 搜索网页，并传入页码参数</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">spider</span><span class="o">.</span><span class="n">search_web</span><span class="p">(</span><span class="n">word</span><span class="o">=</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;要搜索的关键词：&#39;</span><span class="p">),</span> <span class="n">pn</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;页码：&#39;</span><span class="p">))))</span>
+</code></pre></div>
+
+
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>传入页码参数的时候一定要小心，务必不要传入过大的页码，因为百度搜索会自动跳转回第一页</p>
+</div>
+<h3 id="_4">返回值</h3>
+<p><code>BaiduSpider.search_web</code>函数的返回类型是<code>dict</code>，大致返回模版如下：</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+    <span class="c1"># 搜索结果列表</span>
+    <span class="s1">&#39;results&#39;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="c1"># 总计搜索结果数量</span>
+        <span class="p">{</span>
+            <span class="s1">&#39;result&#39;</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>  <span class="c1"># 总计搜索结果数</span>
+            <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;total&#39;</span>  <span class="c1"># type用来区分不同类别的搜索结果</span>
+        <span class="p">},</span>
+        <span class="c1"># 相关搜索建议</span>
+        <span class="p">{</span>
+            <span class="s1">&#39;results&#39;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="nb">str</span><span class="p">,</span>  <span class="c1"># 相关搜索建议</span>
+                <span class="s1">&#39;...&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;...&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;...&#39;</span><span class="p">,</span>
+                <span class="o">...</span>
+            <span class="p">],</span>
+            <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;related&#39;</span>
+        <span class="p">},</span>
+        <span class="c1"># 运算窗口，仅会在搜索词涉及运算时出现</span>
+        <span class="p">{</span>
+            <span class="s1">&#39;process&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>  <span class="c1"># 算数过程</span>
+            <span class="s1">&#39;result&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>  <span class="c1"># 运算结果</span>
+            <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;calc&#39;</span>
+        <span class="p">},</span>
+        <span class="c1"># 相关新闻，仅会在搜索词有相关新闻时出现</span>
+        <span class="p">{</span>
+            <span class="s1">&#39;results&#39;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s1">&#39;author&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>  <span class="c1"># 新闻来源</span>
+                    <span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>  <span class="c1"># 新闻发布时间</span>
+                    <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>  <span class="c1"># 新闻标题</span>
+                <span class="p">},</span>
+                <span class="p">{</span> <span class="o">...</span> <span class="p">},</span>
+                <span class="p">{</span> <span class="o">...</span> <span class="p">},</span>
+                <span class="p">{</span> <span class="o">...</span> <span class="p">},</span>
+                <span class="o">...</span>
+            <span class="p">],</span>
+            <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;news&#39;</span>
+        <span class="p">},</span>
+        <span class="c1"># 相关视频，仅会在搜索词有相关视频时出现</span>
+        <span class="p">{</span>
+            <span class="s1">&#39;results&#39;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s1">&#39;cover&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>  <span class="c1"># 视频封面图片链接</span>
+                    <span class="s1">&#39;origin&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>  <span class="c1"># 视频来源</span>
+                    <span class="s1">&#39;length&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>  <span class="c1"># 视频时长</span>
+                    <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>  <span class="c1"># 视频标题</span>
+                    <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>  <span class="c1"># 视频链接</span>
+                <span class="p">},</span>
+                <span class="p">{</span> <span class="o">...</span> <span class="p">},</span>
+                <span class="p">{</span> <span class="o">...</span> <span class="p">},</span>
+                <span class="p">{</span> <span class="o">...</span> <span class="p">},</span>
+                <span class="o">...</span>
+            <span class="p">],</span>
+            <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;video&#39;</span>
+        <span class="p">},</span>
+        <span class="c1"># 普通的搜索结果</span>
+        <span class="p">{</span>
+            <span class="s1">&#39;des&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>  <span class="c1"># 搜索结果简介</span>
+            <span class="s1">&#39;origin&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>  <span class="c1"># 搜索结果的来源，可能是域名，也可能是名称</span>
+            <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="c1"># 搜索结果标题</span>
+            <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;result&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="c1"># 搜索结果链接</span>
+        <span class="p">},</span>
+        <span class="p">{</span> <span class="o">...</span> <span class="p">},</span>
+        <span class="p">{</span> <span class="o">...</span> <span class="p">},</span>
+        <span class="p">{</span> <span class="o">...</span> <span class="p">},</span>
+        <span class="o">...</span>
+    <span class="p">],</span>
+    <span class="c1"># 总计的搜索结果页数，可能会因为当前页数的变化而随之变化</span>
+    <span class="s1">&#39;total&#39;</span><span class="p">:</span> <span class="nb">int</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>因为百度网页搜索有多种搜索结果，所以<code>search_web</code>函数使用<code>type</code>标签为不同类别的搜索结果分类，如视频是<code>video</code>，资讯是<code>news</code>，运算是<code>calc</code>等不同标签，其中<code>result</code>为普通的搜索结果。</p>
+</div>
                 
               
               
