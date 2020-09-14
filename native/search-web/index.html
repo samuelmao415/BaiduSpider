@@ -40,7 +40,8 @@
                 <span class=s1>&#39;author&#39;</span><span class=p>:</span> <span class=nb>str</span><span class=p>,</span>  <span class=c1># 新闻来源</span>
                 <span class=s1>&#39;time&#39;</span><span class=p>:</span> <span class=nb>str</span><span class=p>,</span>  <span class=c1># 新闻发布时间</span>
                 <span class=s1>&#39;title&#39;</span><span class=p>:</span> <span class=nb>str</span><span class=p>,</span>  <span class=c1># 新闻标题</span>
-                <span class=s1>&#39;url&#39;</span><span class=p>:</span> <span class=nb>str</span>  <span class=c1># 新闻链接</span>
+                <span class=s1>&#39;url&#39;</span><span class=p>:</span> <span class=nb>str</span><span class=p>,</span>  <span class=c1># 新闻链接</span>
+                <span class=s1>&#39;des&#39;</span><span class=p>:</span> <span class=nb>str</span>  <span class=c1># 新闻简介，大部分时间是None</span>
             <span class=p>}],</span>
             <span class=s1>&#39;type&#39;</span><span class=p>:</span> <span class=s1>&#39;news&#39;</span>
         <span class=p>},</span>
@@ -96,11 +97,12 @@
         <span class=s1>&#39;author&#39;</span><span class=p>:</span> <span class=nb>str</span><span class=p>,</span>
         <span class=s1>&#39;time&#39;</span><span class=p>:</span> <span class=nb>str</span><span class=p>,</span>
         <span class=s1>&#39;title&#39;</span><span class=p>:</span> <span class=nb>str</span><span class=p>,</span>
-        <span class=s1>&#39;url&#39;</span><span class=p>:</span> <span class=nb>str</span>
+        <span class=s1>&#39;url&#39;</span><span class=p>:</span> <span class=nb>str</span><span class=p>,</span>
+        <span class=s1>&#39;des&#39;</span><span class=p>:</span> <span class=nb>str</span>
     <span class=p>}],</span>
     <span class=s1>&#39;type&#39;</span><span class=p>:</span> <span class=s1>&#39;news&#39;</span>
 <span class=p>}</span>
-</code></pre></div> <h4 id=_15>解释<a class=headerlink href=#_15 title="Permanent link">&para;</a></h4> <ul> <li><code>results</code>：表示相关新闻，其中有许多子字典，每个子字典表示一条新闻。值类型为<code>list</code><ul> <li><code>author</code>：新闻来源，类型为<code>str</code></li> <li><code>time</code>：新闻发布时间，类型为<code>str</code></li> <li><code>title</code>：新闻标题，类型为<code>str</code></li> <li><code>url</code>：新闻链接，类型为<code>str</code></li> </ul> </li> <li><code>type</code>：该项表示该结果的类别，值为<code>news</code>，类型是<code>str</code></li> </ul> <div class="admonition warning"> <p class=admonition-title>Warning</p> <p>本项搜索结果仅在搜索词有相关新闻时出现，请谨慎调用</p> </div> <h3 id=_16>相关视频<a class=headerlink href=#_16 title="Permanent link">&para;</a></h3> <p>该项的分类为<code>video</code>，模型如下：</p> <div class=highlight><pre><span></span><code><span class=p>{</span>
+</code></pre></div> <h4 id=_15>解释<a class=headerlink href=#_15 title="Permanent link">&para;</a></h4> <ul> <li><code>results</code>：表示相关新闻，其中有许多子字典，每个子字典表示一条新闻。值类型为<code>list</code><ul> <li><code>author</code>：新闻来源，类型为<code>str</code></li> <li><code>time</code>：新闻发布时间，类型为<code>str</code></li> <li><code>title</code>：新闻标题，类型为<code>str</code></li> <li><code>url</code>：新闻链接，类型为<code>str</code></li> <li><code>des</code>：新闻简介，类型为<code>str</code>，大部分时间为None</li> </ul> </li> <li><code>type</code>：该项表示该结果的类别，值为<code>news</code>，类型是<code>str</code></li> </ul> <div class="admonition warning"> <p class=admonition-title>Warning</p> <p>本项搜索结果仅在搜索词有相关新闻时出现，请谨慎调用</p> </div> <h3 id=_16>相关视频<a class=headerlink href=#_16 title="Permanent link">&para;</a></h3> <p>该项的分类为<code>video</code>，模型如下：</p> <div class=highlight><pre><span></span><code><span class=p>{</span>
     <span class=s1>&#39;results&#39;</span><span class=p>:</span> <span class=p>[{</span>
         <span class=s1>&#39;cover&#39;</span><span class=p>:</span> <span class=nb>str</span><span class=p>,</span>
         <span class=s1>&#39;origin&#39;</span><span class=p>:</span> <span class=nb>str</span><span class=p>,</span>
