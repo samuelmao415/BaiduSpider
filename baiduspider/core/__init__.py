@@ -68,7 +68,7 @@ class BaiduSpider(BaseSpider):
         }
         self.parser = Parser()
 
-    def search_web(self, query: str, pn: int = 1) -> dict:
+    def search_web(self, proxies, query: str, pn: int = 1) -> dict:
         """百度网页搜索
 
         - 简单搜索：
@@ -174,7 +174,8 @@ class BaiduSpider(BaseSpider):
         try:
             text = quote(query, 'utf-8')
             url = 'https://www.baidu.com/s?wd=%s&pn=%d' % (text, (pn - 1) * 10)
-            content = self._get_response(url)
+            print('proxies: ', proxies)
+            content = self._get_response(url, proxies = proxies)
             results = self.parser.parse_web(content)
         except Exception as err:
             error = err

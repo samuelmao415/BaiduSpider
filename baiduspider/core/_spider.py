@@ -2,6 +2,8 @@ import re
 from htmlmin import minify
 import requests
 from baiduspider.errors import ParseError, UnknownError
+import random
+import time
 
 class BaseSpider(object):  # pragma: no cover
     def __init__(self) -> None:
@@ -48,7 +50,7 @@ class BaseSpider(object):  # pragma: no cover
         """
         return html.replace('\u00a0', '')
 
-    def _get_response(self, url: str) -> str:
+    def _get_response(self, url: str, proxies) -> str:
         """获取网站响应，并返回源码
 
         Args:
@@ -57,7 +59,7 @@ class BaseSpider(object):  # pragma: no cover
         Returns:
             str: 获取到的网站HTML代码
         """
-        response = requests.get(url, headers=self.headers)
+        response = requests.get(url, headers=self.headers, proxies=proxies)
         content = bytes(response.text, response.encoding).decode('utf-8')
         return content
 
